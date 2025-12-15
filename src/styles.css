@@ -1,0 +1,338 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0a0a1a;
+  color: white;
+  overflow: hidden;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  background: rgba(10, 10, 26, 0.9);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #4cc9f0;
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  background: linear-gradient(45deg, #4cc9f0, #f72585);
+  -webkit-text-fill-color: transparent;
+}
+
+.header-stats {
+  display: flex;
+  gap: 20px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #8d99ae;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #4cc9f0;
+}
+
+/* Game Area */
+.game-area {
+  flex: 1;
+  position: relative;
+  background: #000;
+}
+
+.game-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Controls */
+.controls {
+  background: rgba(26, 26, 46, 0.9);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobile-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.mobile-row {
+  display: flex;
+  gap: 20px;
+}
+
+.control-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: #4cc9f0;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-btn:active {
+  transform: scale(0.95);
+}
+
+/* Menu */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.menu-content {
+  background: #1a1a2e;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  border: 2px solid #4cc9f0;
+}
+
+.menu-title {
+  font-size: 2.5rem;
+  color: #4cc9f0;
+  margin-bottom: 15px;
+}
+
+.menu-description {
+  color: #8d99ae;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Win Screen */
+.win-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.win-content {
+  background: #1a1a2e;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  border: 2px solid #4caf50;
+  max-width: 500px;
+  width: 90%;
+}
+
+.win-title {
+  font-size: 2.5rem;
+  color: #4caf50;
+  margin-bottom: 20px;
+}
+
+.win-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 25px 0;
+}
+
+.win-stat {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.win-stat-label {
+  font-size: 0.9rem;
+  color: #8d99ae;
+  margin-bottom: 5px;
+}
+
+.win-stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4cc9f0;
+}
+
+.win-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #4cc9f0, #4361ee);
+}
+
+.btn-secondary {
+  background: linear-gradient(45deg, #f72585, #7209b7);
+}
+
+.btn-success {
+  background: linear-gradient(45deg, #4caf50, #2e7d32);
+}
+
+.btn-danger {
+  background: linear-gradient(45deg, #f44336, #c62828);
+}
+
+/* Instructions */
+.instructions {
+  padding: 15px;
+  background: rgba(26, 26, 46, 0.9);
+  text-align: center;
+  font-size: 0.9rem;
+  color: #8d99ae;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+  }
+  
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+  
+  .header-stats {
+    width: 100%;
+    justify-content: space-around;
+  }
+  
+  .control-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
+  }
+  
+  .menu-content,
+  .win-content {
+    padding: 25px;
+  }
+  
+  .menu-title,
+  .win-title {
+    font-size: 2rem;
+  }
+  
+  .win-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Improved controls */
+.control-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: linear-gradient(145deg, #4cc9f0, #3a8bc8);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.1s;
+  user-select: none;
+}
+
+.control-btn:active {
+  transform: scale(0.9);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Different colors for directions */
+.control-btn.up { background: linear-gradient(145deg, #4cc9f0, #3a8bc8); }
+.control-btn.down { background: linear-gradient(145deg, #f72585, #c2185b); }
+.control-btn.left { background: linear-gradient(145deg, #7209b7, #5a0a91); }
+.control-btn.right { background: linear-gradient(145deg, #3a0ca3, #2d0a7d); }
+.control-btn.jump { background: linear-gradient(145deg, #4caf50, #388e3c); }
+
+/* Instructions improvement */
+.instructions {
+  padding: 15px;
+  background: rgba(26, 26, 46, 0.9);
+  text-align: center;
+  font-size: 0.9rem;
+  color: #8d99ae;
+  border-top: 1px solid rgba(76, 201, 240, 0.2);
+}
+
+.instructions p {
+  margin: 5px 0;
+}
